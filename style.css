@@ -1,0 +1,91 @@
+:root {
+    /* text */
+
+    /* background */
+    --lightSkyBlue: #0497aa;
+    --lightSkyBlueHover: #068394;
+    --lightSkyBlueActive: #046d7a;
+    --orange: #ffa500;
+    --red: #be0707;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#root {
+    width: 100vw;
+    height: 100vh;
+    margin: auto;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+}
+
+#userText {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+}
+
+#countButton {
+    background-color: var(--lightSkyBlue);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#rndColor {
+    background-color: var(--orange);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#resetColor {
+    background-color: var(--red);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#countButton:hover {
+    background-color: var(--lightSkyBlueHover);
+}
+
+#countButton:active {
+    background-color: var(--lightSkyBlueActive);
+}
+
+#result h3 span {
+    font-weight: 700;
+}
