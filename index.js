@@ -1,17 +1,9 @@
-const countButton = document.getElementById("countButton")
-countButton.addEventListener("click", (e) => {
+document.getElementById("countButton").addEventListener("click", (e) => {
     const userText = document.getElementById("userText").value
     if(userText.trim()) {
-        const lettersCount = userText.replace(/[^A-Za-zА-Яа-я]/gu, '').length;
-        const wordsCount = userText.split(/\s+/).filter((word) => word.length > 0).length;
-        const sentencesCount = userText.split(/[.!?]+/).filter((sentence) => sentence.length > 0).length;
-
-        const letters = document.getElementById("letters")
-        letters.innerHTML = lettersCount || "0"
-        const words = document.getElementById("words")
-        words.innerHTML = wordsCount || "0"
-        const sentences = document.getElementById("sentences")
-        sentences.innerHTML = sentencesCount  || "0"
+        document.getElementById("letters").innerHTML = userText.replace(/[^A-Za-zА-Яа-я]/gu, '').length || "0"
+        document.getElementById("words").innerHTML = userText.split(/\s+/).filter((word) => word.length > 0).length || "0"
+        document.getElementById("sentences").innerHTML = userText.split(/\s+/).filter(str => str.length && /\w[.?!]+(\s|$)/.test(str)).length || "0"
     } else {
         document.getElementById("letters").innerHTML = "0"
         document.getElementById("words").innerHTML = "0"
@@ -19,12 +11,12 @@ countButton.addEventListener("click", (e) => {
     }
 })
 
-const rndColor = document.getElementById("rndColor").addEventListener("click", () => {
-    const rootBox = document.getElementById("root").style.backgroundColor = randomBackgroundColor()
+document.getElementById("rndColor").addEventListener("click", () => {
+    document.getElementById("root").style.backgroundColor = randomBackgroundColor()
 })
 
-const resetColor = document.getElementById("resetColor").addEventListener("click", () => {
-    const rootBox = document.getElementById("root").style.backgroundColor = `rgb(255,255,255)`
+document.getElementById("resetColor").addEventListener("click", () => {
+    document.getElementById("root").style.backgroundColor = `rgb(255,255,255)`
 })
 
 function randomBackgroundColor() {
